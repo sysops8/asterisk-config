@@ -1,3 +1,4 @@
+Этот докерфайл отработал - [user@centos9 asterisk-docker]$ cat dockerfile 
 # =============================
 #  Asterisk 13 LTS + DAHDI + MP3 + meetme
 # =============================
@@ -56,13 +57,7 @@ RUN wget https://downloads.sourceforge.net/project/lame/lame/${LAME_VERSION}/lam
 # ---------------------
 # DAHDI (для meetme)
 # ---------------------
-RUN dnf -y install kernel-devel-$(uname -r) kernel-headers-$(uname -r)
-# Установка DAHDI (билд, а не только инструменты)
-RUN wget https://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz && \
-    tar xzf dahdi-linux-complete-current.tar.gz && \
-    cd dahdi-linux-complete-3.4.0+3.4.0/ && \
-    make all && make install && make config
-
+RUN dnf -y install dahdi-tools
 
 # ---------------------
 # Asterisk
