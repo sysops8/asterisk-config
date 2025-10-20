@@ -1,4 +1,3 @@
-Этот докерфайл отработал - [user@centos9 asterisk-docker]$ cat dockerfile 
 # =============================
 #  Asterisk 13 LTS + DAHDI + MP3 + meetme
 # =============================
@@ -88,3 +87,4 @@ RUN groupadd asterisk && \
 EXPOSE 5060/udp 5060/tcp 8088/tcp 10000-20000/udp
 
 CMD ["/usr/sbin/asterisk", "-f", "-U", "asterisk", "-G", "asterisk"]
+
